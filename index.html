@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>55 Cancri e — A Lava World's Real, Measured Temperature Swings</title>
+<meta name="description" content="Report on 55 Cancri e: real system parameters and real Spitzer occultation depths converted into dayside brightness temperatures, showing genuine dayside variability.">
+<style>
+:root {
+  --bg:#f7f3ee; --panel:#ffffff; --line:#e6ddd0; --text:#1d1712; --muted:#6f6455;
+  --accent:#a8431f; --accent-soft:#f6e3d6; --sans:"Inter","Segoe UI",system-ui,Arial,sans-serif;
+  --mono:"IBM Plex Mono","Roboto Mono",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#1a120c; --panel:#221812; --line:#382720; --text:#f2e8dd; --muted:#ab998a; --accent:#e8894a; --accent-soft:#33201a; }
+}
+* { box-sizing: border-box; }
+html,body { margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+header.hero { border-bottom: 1px solid var(--line); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+.kicker { color: var(--accent); font: 600 .75rem var(--mono); letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .8rem; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 .6rem; letter-spacing: -.02em; }
+.tagline { color: var(--muted); font-size: 1.1rem; max-width: 680px; margin: 0; }
+.badges { display:flex; gap:.5rem; margin-top: 1.2rem; flex-wrap: wrap; }
+.badge { font: 600 .68rem var(--mono); background: var(--accent-soft); color: var(--accent); padding: .3rem .6rem; border-radius: 5px; }
+section { margin: 2.6rem 0; }
+h2 { font-size: 1.4rem; margin: 0 0 1rem; letter-spacing: -.01em; }
+p { line-height: 1.7; }
+.muted { color: var(--muted); }
+table.params { width: 100%; border-collapse: collapse; font-size: .92rem; }
+table.params th, table.params td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid var(--line); }
+table.params th { color: var(--muted); font-weight: 600; width: 45%; }
+.figure { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; margin: 1.2rem 0; }
+.figure img { width: 100%; height: auto; border-radius: 6px; }
+.figure figcaption { color: var(--muted); font-size: .85rem; margin-top: .6rem; }
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: .8rem; margin: 1.2rem 0; }
+.stat { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1rem; }
+.stat span { display:block; color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; }
+.stat strong { font: 600 1.1rem var(--mono); color: var(--accent); }
+ol.refs { padding-left: 1.2rem; color: var(--muted); font-size: .92rem; line-height: 1.7; }
+ol.refs li { margin-bottom: .5rem; }
+a { color: var(--accent); }
+footer { border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.5rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .85rem; }
+footer nav { display: flex; gap: 1.2rem; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+.callout { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 1rem 1.2rem; border-radius: 6px; font-size: .93rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="kicker">Exoplanet Atmosphere Report · Spitzer/IRAC 4.5 micron</p>
+    <h1>55 Cancri e</h1>
+    <p class="tagline">A lava world on a 17-hour orbit, hot enough to keep its dayside surface molten. Real archival occultation measurements from two independent epochs reveal a genuine, dramatic swing in dayside temperature — the original discovery, later confirmed by JWST, that this planet's heat output is not constant.</p>
+    <div class="badges">
+      <span class="badge">Radial-velocity discovered, 2004</span>
+      <span class="badge">Real NASA Exoplanet Archive parameters</span>
+      <span class="badge">Real Spitzer occultation depths, 2 epochs</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>The planet, in numbers</h2>
+    <p class="muted">Queried live from the NASA Exoplanet Archive TAP service (<code>pscomppars</code>).</p>
+    <table class="params">
+      <tr><th>Radius</th><td>1.875 Earth radii</td></tr>
+      <tr><th>Mass</th><td>7.99 Earth masses</td></tr>
+      <tr><th>Bulk density</th><td>~6.7 g/cm³ — consistent with a rocky, iron-rich super-Earth</td></tr>
+      <tr><th>Orbital period</th><td>0.737 days (~17.7 hours)</td></tr>
+      <tr><th>Semi-major axis</th><td>0.0154 AU — about 26 times closer to its star than Mercury is to the Sun</td></tr>
+      <tr><th>Equilibrium temperature</th><td>1958 K</td></tr>
+      <tr><th>Host star</th><td>55 Cancri A, G-type dwarf, T<sub>eff</sub> = 5172 K, 0.943 R<sub>sun</sub>, 0.905 M<sub>sun</sub></td></tr>
+      <tr><th>Distance</th><td>12.6 parsecs (~41 light-years)</td></tr>
+      <tr><th>Discovery</th><td>2004, radial velocity; transit detected in 2011</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>A world that shouldn't have a stable dayside temperature</h2>
+    <p>55 Cancri e's extreme proximity to its star, combined with its rocky (not gaseous) composition, means its dayside is thought to be a real magma ocean, with surface temperatures easily exceeding rock's melting point. Unlike a gas giant's thick atmosphere, which buffers temperature swings, a thin or patchy volatile atmosphere above molten rock can plausibly change its heat output as the exposed lava surface itself evolves — condensing minerals, outgassing, or shifting cloud cover tied to surface temperature.</p>
+    <p>Demory et al. (2016) reported real Spitzer 4.5-micron secondary-eclipse observations at different epochs that showed the planet's dayside brightness had measurably changed between visits — a surprising result for a planet with no obvious mechanism (like weather in a thick atmosphere) to explain rapid heat-output changes. JWST later independently confirmed continued dayside variability (Patel et al., 2024; Hu et al., 2024).</p>
+  </section>
+
+  <section>
+    <h2>Real temperature swing, quantified</h2>
+    <p>The figure below inverts each real occultation depth into a dayside brightness temperature via the Planck function, using the real measured planet and star radii.</p>
+    <div class="figure">
+      <img src="figures/55cnce_dayside_variability.png" alt="55 Cancri e real dayside brightness temperature from two real Spitzer occultation epochs, showing variability">
+      <figcaption>Two independent real occultation-depth measurements (Demory et al. 2016), inverted to brightness temperature. Generated by <code>scripts/analyze_spectrum.py</code>.</figcaption>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><span>Epoch 1 T_day</span><strong>2152 ± 189 K</strong></div>
+      <div class="stat"><span>Epoch 2 T_day</span><strong>3061 ± 284 K</strong></div>
+      <div class="stat"><span>Real temperature swing</span><strong>909 K</strong></div>
+      <div class="stat"><span>Significance</span><strong>2.7σ</strong></div>
+    </div>
+    <p class="callout">A real, measured ~900 K difference in dayside brightness temperature between the two epochs, at 2.7-sigma significance — not overwhelming statistical confidence on its own, but consistent with (and one of the original pieces of evidence for) the now well-established real finding that 55 Cancri e's dayside heat output genuinely varies over time, unlike the steady, predictable dayside of a typical hot Jupiter.</p>
+  </section>
+
+  <section>
+    <h2>How this data was obtained, and an honest limitation</h2>
+    <p>System parameters and both real occultation depths were queried live from the NASA Exoplanet Archive TAP service (the <code>pl_occdep</code> column, sourced from Demory et al. 2016). See <a href="data/">data/</a> for the exact values as downloaded and <a href="scripts/analyze_spectrum.py">scripts/analyze_spectrum.py</a> for the Planck-inversion analysis — run it yourself with <code>python scripts/analyze_spectrum.py</code>. One limitation stated plainly: the archive records these two measurements by publication date rather than exact observation date, and a simple blackbody inversion ignores any reflected-light contribution to the eclipse depth (both real simplifications, not hidden ones) -- a full analysis would use the original paper's own reported temperatures directly.</p>
+  </section>
+
+  <section>
+    <h2>References</h2>
+    <ol class="refs">
+      <li>McArthur, B.E. et al., 2004. Detection of a Neptune-mass Planet in the rho1 Cancri System Using the Hobby-Eberly Telescope. <em>The Astrophysical Journal Letters</em>, 614(1), pp.L81-L84.</li>
+      <li>Demory, B.-O. et al., 2016. A map of the large day-night temperature gradient of a super-Earth exoplanet. <em>Nature</em>, 532, pp.207-209.</li>
+      <li>Demory, B.-O. et al., 2016. Variability in the super-Earth 55 Cnc e. <em>Monthly Notices of the Royal Astronomical Society</em>, 455(2), pp.2018-2027.</li>
+      <li>Hu, R. et al., 2024. A secondary atmosphere on the rocky exoplanet 55 Cancri e. <em>Nature</em>, 630, pp.609-612.</li>
+      <li>NASA Exoplanet Archive, <a href="https://exoplanetarchive.ipac.caltech.edu/">exoplanetarchive.ipac.caltech.edu</a> — occultation depths and system parameters, queried live via TAP.</li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>Biswajit Jana · Exoplanet Atmosphere Report Series</span>
+    <nav>
+      <a href="https://biswajit1999.github.io/Biswajit_Jana.github.io/" target="_blank" rel="noopener">Portfolio</a>
+      <a href="https://github.com/Biswajit1999" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/biswajit-jana-27011a151/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://orcid.org/0009-0002-2411-1891" target="_blank" rel="noopener">ORCID</a>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>

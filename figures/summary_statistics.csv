@@ -1,0 +1,5 @@
+quantity,value,unit
+t_day_2016-01,2152 +/- 189,K
+t_day_2016-04,3061 +/- 284,K
+epoch_to_epoch_temp_difference,909,K
+epoch_to_epoch_significance,2.7,sigma
