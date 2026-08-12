@@ -1,5 +1,8 @@
 quantity,value,unit
-t_day_2016-01,2152 +/- 189,K
-t_day_2016-04,3061 +/- 284,K
-epoch_to_epoch_temp_difference,909,K
-epoch_to_epoch_significance,2.7,sigma
+t_day_2012_this_script,1639 +/- 328,K
+t_day_2012_paper,1365 (+219/-257),K
+t_day_2013_this_script,3330 +/- 341,K
+t_day_2013_paper,2528 (+224/-229),K
+season_to_season_temp_difference_this_script,1692 +/- 473,K
+season_to_season_depth_difference_sigma_this_script,3.7,sigma (two-point comparison)
+paper_significance,3.7,"sigma (constant-depth model rejected, all 8 eclipses)"

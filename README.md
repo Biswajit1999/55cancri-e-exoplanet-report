@@ -1,23 +1,28 @@
 # 55 Cancri e — Exoplanet Atmosphere Report
 
-A lava world on a 17.7-hour orbit, hot enough for a real molten-rock
-dayside. This repo converts two real archival Spitzer occultation-depth
-measurements into dayside brightness temperatures, quantifying the real,
-published variability that was later independently confirmed by JWST.
+A lava world on a 17.7-hour orbit, hot enough to keep its dayside
+molten. This repo converts two Spitzer occultation-depth measurements,
+split by observing season, into dayside brightness temperatures and
+compares them against the temperatures Demory et al. (2016) report
+directly.
 
 **[Open the full report](index.html)** (open locally in a browser, or serve
 with `python -m http.server` from this directory).
 
-## What's real here
+## Data sources
 
-- **System parameters and occultation depths** — both queried live from the
-  NASA Exoplanet Archive TAP service: system parameters from `pscomppars`,
-  and two real secondary-eclipse depth measurements from the `ps` table's
-  `pl_occdep` column (source: Demory et al. 2016, Spitzer/IRAC 4.5 micron).
-- **Analysis** — `scripts/analyze_spectrum.py` inverts each real occultation
-  depth into a dayside brightness temperature via the Planck function
-  (root-finding), using the real measured planet/star radii. Run it
-  yourself:
+- **System parameters** — from the NASA Exoplanet Archive TAP service
+  (`pscomppars`).
+- **Occultation depths** — the season-split values from Demory et al.
+  (2016), Table 4: 47 ± 21 ppm for 2012 and 176 ± 28 ppm for 2013,
+  fit from eight individual Spitzer/IRAC 4.5-micron eclipses. See
+  [data/SOURCE.md](data/SOURCE.md) for how these differ from a pair of
+  values an earlier version of this repo pulled from the archive.
+- **Analysis** — `scripts/analyze_spectrum.py` inverts each season's
+  occultation depth into a dayside brightness temperature via the
+  Planck function (root-finding), using the measured planet/star
+  radii, and prints it next to the temperature the paper quotes for
+  that season. Run it yourself:
 
   ```bash
   pip install -r requirements.txt
@@ -28,28 +33,31 @@ with `python -m http.server` from this directory).
 
 ```text
 index.html              the report webpage
-data/                    real Spitzer occultation depths (NASA Exoplanet Archive)
-scripts/analyze_spectrum.py   real Planck-inversion analysis
+data/                    season-split Spitzer occultation depths (Demory et al. 2016)
+scripts/analyze_spectrum.py   Planck-inversion analysis, this script vs. the paper
 figures/                 generated plot + summary_statistics.csv
 ```
 
-## Key finding this repo shows directly
+## What the numbers show
 
-Two real occultation-depth measurements give dayside brightness
-temperatures of 2152 +/- 189 K and 3061 +/- 284 K -- a real ~909 K swing at
-2.7-sigma significance. This is consistent with (and one of the original
-pieces of evidence for) the now well-established finding that 55 Cancri e's
-dayside heat output genuinely varies over time, a real anomaly for a planet
-with no thick, weather-bearing atmosphere to explain it through ordinary
-means.
+The two season depths differ at 3.7σ — the same significance Demory et
+al. (2016) report from fitting all eight individual eclipses and
+rejecting a constant depth. This script's own blackbody inversion gives
+1639 K (2012) and 3330 K (2013); the paper's own MCMC fit gives 1365 K
+and 2528 K for the same seasons. The gap between the two methods comes
+from this script inverting a single wavelength without the instrument
+bandpass or a reflected-light term, both of which the paper's fit
+accounts for — the season-to-season swing itself holds up either way.
 
-## Honest limitation
+## Limitations
 
-The archive records these two measurements by publication date rather than
-their exact observation date, and this script's simple blackbody inversion
-ignores any reflected-light contribution to the eclipse depth -- both
-stated plainly rather than hidden. A full reanalysis would use each
-original paper's own reported dayside temperature directly.
+The occultation depths here are Demory et al.'s season-split fit, not
+per-eclipse values — a fuller version of this analysis would fit all
+eight eclipses individually. And as above, this script's blackbody
+inversion is a simplification: it treats the Spitzer channel as
+monochromatic at 4.5 microns and ignores any reflected-light
+contribution to the eclipse depth, which is why its temperatures run
+above the paper's own.
 
 ## References
 
@@ -58,7 +66,8 @@ original paper's own reported dayside temperature directly.
 2. Demory, B.-O. et al., 2016. A map of the large day-night temperature
    gradient of a super-Earth exoplanet. *Nature*, 532, pp.207-209.
 3. Demory, B.-O. et al., 2016. Variability in the super-Earth 55 Cnc e.
-   *Monthly Notices of the Royal Astronomical Society*, 455(2), pp.2018-2027.
+   *Monthly Notices of the Royal Astronomical Society*, 455(2), pp.2018-2027
+   (arXiv:1505.00269) — source of the occultation depths used here.
 4. Hu, R. et al., 2024. A secondary atmosphere on the rocky exoplanet 55
    Cancri e. *Nature*, 630, pp.609-612.
 5. NASA Exoplanet Archive, <https://exoplanetarchive.ipac.caltech.edu/>.
