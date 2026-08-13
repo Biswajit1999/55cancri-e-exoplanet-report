@@ -44,20 +44,28 @@ The two season depths differ at 3.7σ — the same significance Demory et
 al. (2016) report from fitting all eight individual eclipses and
 rejecting a constant depth. This script's own blackbody inversion gives
 1639 K (2012) and 3330 K (2013); the paper's own MCMC fit gives 1365 K
-and 2528 K for the same seasons. The gap between the two methods comes
-from this script inverting a single wavelength without the instrument
-bandpass or a reflected-light term, both of which the paper's fit
-accounts for — the season-to-season swing itself holds up either way.
+and 2528 K for the same seasons. The gap between the two methods has a
+documented cause: Demory et al. derive their temperatures using an
+observed infrared stellar spectrum of 55 Cancri A (Crossfield 2012)
+and their own fitted mean planet radius (1.92 Earth radii), while this
+script instead assumes the star radiates as a monochromatic blackbody
+at its catalog effective temperature and uses the NASA Exoplanet
+Archive's default planet radius (1.875 Earth radii) — a simpler
+stellar and radius treatment, not a missing reflected-light term. The
+season-to-season swing itself holds up either way.
 
 ## Limitations
 
 The occultation depths here are Demory et al.'s season-split fit, not
 per-eclipse values — a fuller version of this analysis would fit all
-eight eclipses individually. And as above, this script's blackbody
-inversion is a simplification: it treats the Spitzer channel as
-monochromatic at 4.5 microns and ignores any reflected-light
-contribution to the eclipse depth, which is why its temperatures run
-above the paper's own.
+eight eclipses individually. This script's blackbody inversion is also
+a simplification in two specific, documented ways relative to the
+paper: it treats the Spitzer channel as a monochromatic point rather
+than integrating over the real bandpass, and it uses a monochromatic
+blackbody stellar spectrum at the catalog Teff rather than the
+observed infrared stellar spectrum (Crossfield 2012) the paper uses,
+along with a slightly different adopted planet radius — which is why
+its temperatures run above the paper's own.
 
 ## References
 
@@ -70,7 +78,12 @@ above the paper's own.
    (arXiv:1505.00269) — source of the occultation depths used here.
 4. Hu, R. et al., 2024. A secondary atmosphere on the rocky exoplanet 55
    Cancri e. *Nature*, 630, pp.609-612.
-5. NASA Exoplanet Archive, <https://exoplanetarchive.ipac.caltech.edu/>.
+5. Crossfield, I.J.M., 2012. ACME Stellar Spectra. I. Absolutely
+   Calibrated, Mostly Empirical Flux Densities of 55 Cancri and its
+   Transiting Planet 55 Cancri e. *Astronomy & Astrophysics*, 545, A97
+   — the observed infrared stellar spectrum Demory et al. (2016) use to
+   convert eclipse depth to brightness temperature.
+6. NASA Exoplanet Archive, <https://exoplanetarchive.ipac.caltech.edu/>.
 
 ## Author
 
