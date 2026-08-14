@@ -1,5 +1,9 @@
 # 55 Cancri e — Exoplanet Atmosphere Report
 
+<img src="images/thumbnail.png" alt="Artist's concept of 55 Cancri e" width="360">
+
+*AI-generated artist's concept — not a real photograph. See the report for actual Spitzer/IRAC data.*
+
 A lava world on a 17.7-hour orbit, hot enough to keep its dayside
 molten. This repo converts two Spitzer occultation-depth measurements,
 split by observing season, into dayside brightness temperatures and
