@@ -36,6 +36,20 @@ index.html              the report webpage
 data/                    season-split Spitzer occultation depths (Demory et al. 2016)
 scripts/analyze_spectrum.py   Planck-inversion analysis, this script vs. the paper
 figures/                 generated plot + summary_statistics.csv
+tests/                   unit tests + a regression check against the real data
+```
+
+## Tests
+
+`tests/test_analysis.py` checks the Planck-inversion round trip and
+reruns the full pipeline on the real season-split occultation depths,
+verifying this repo's own independent two-point significance still
+lands close to the paper's own 3.7-sigma constant-depth rejection — a
+consistency check that the season values were transcribed correctly.
+Runs automatically on every push via GitHub Actions; run locally with:
+
+```bash
+pytest tests/ -v
 ```
 
 ## What the numbers show
