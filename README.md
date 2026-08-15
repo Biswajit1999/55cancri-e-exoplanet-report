@@ -1,8 +1,10 @@
 # 55 Cancri e — Exoplanet Atmosphere Report
 
-<img src="images/thumbnail.png" alt="Artist's concept of 55 Cancri e" width="360">
+<p align="center">
+  <img src="images/thumbnail.png" alt="Artist's concept of 55 Cancri e" width="360">
+</p>
 
-*AI-generated artist's concept — not a real photograph. See the report for actual Spitzer/IRAC data.*
+<p align="center"><em>AI-generated artist's concept — not a real photograph. See the report for actual Spitzer/IRAC data.</em></p>
 
 A lava world on a 17.7-hour orbit, hot enough to keep its dayside
 molten. This repo converts two Spitzer occultation-depth measurements,
@@ -10,8 +12,7 @@ split by observing season, into dayside brightness temperatures and
 compares them against the temperatures Demory et al. (2016) report
 directly.
 
-**[Open the full report](index.html)** (open locally in a browser, or serve
-with `python -m http.server` from this directory).
+**[Open the full report](https://biswajit1999.github.io/55cancri-e-exoplanet-report/)** — the live GitHub Pages version. You can also open `index.html` locally in a browser, or serve it with `python -m http.server` from this directory.
 
 ## Data sources
 
