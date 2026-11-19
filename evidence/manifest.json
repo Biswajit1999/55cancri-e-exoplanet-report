@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "project": "55 Cancri e — Exoplanet Atmosphere Report",
+  "repository": "https://github.com/Biswajit1999/55cancri-e-exoplanet-report",
+  "files": [
+    {
+      "label": "Data source notes",
+      "path": "data/SOURCE.md",
+      "role": "Data and provenance",
+      "bytes": 1446,
+      "sha256": "8a718ab5cbb34d50c4d4c817e11b16ec5d34e04801c867c6dd8e8c6d41c4b9ca",
+      "hash_basis": "LF-normalised text",
+      "format": "MD"
+    },
+    {
+      "label": "Spitzer occultation depths",
+      "path": "data/spitzer_occultation_depths.csv",
+      "role": "Data and provenance",
+      "bytes": 192,
+      "sha256": "81826dbcec0e224a0758e0a79bfe6f46d2c3f362015b25f924ea5294babc90bf",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 2,
+      "columns": 4,
+      "headers": [
+        "season",
+        "occultation_depth_ppm",
+        "occultation_depth_err_ppm",
+        "reference"
+      ],
+      "preview": [
+        [
+          "2012",
+          "47",
+          "21",
+          "Demory et al. 2016 (season-split MCMC fit",
+          " Table 4)"
+        ],
+        [
+          "2013",
+          "176",
+          "28",
+          "Demory et al. 2016 (season-split MCMC fit",
+          " Table 4)"
+        ]
+      ]
+    },
+    {
+      "label": "Summary statistics",
+      "path": "figures/summary_statistics.csv",
+      "role": "Tables and numerical results",
+      "bytes": 392,
+      "sha256": "dab3777134f40038dc6d3373644e4f290afdeb146740d7fdd8d6ba507d6388d4",
+      "hash_basis": "LF-normalised text",
+      "format": "CSV",
+      "rows": 7,
+      "columns": 3,
+      "headers": [
+        "quantity",
+        "value",
+        "unit"
+      ],
+      "preview": [
+        [
+          "t_day_2012_this_script",
+          "1639 +/- 328",
+          "K"
+        ],
+        [
+          "t_day_2012_paper",
+          "1365 (+219/-257)",
+          "K"
+        ],
+        [
+          "t_day_2013_this_script",
+          "3330 +/- 341",
+          "K"
+        ],
+        [
+          "t_day_2013_paper",
+          "2528 (+224/-229)",
+          "K"
+        ]
+      ]
+    },
+    {
+      "label": "55cnce dayside variability",
+      "path": "figures/55cnce_dayside_variability.png",
+      "role": "Figures",
+      "bytes": 76131,
+      "sha256": "97b88b3ae2596eb4e32bda29258aca6d375db134c68de71071db2a4bb64fb499",
+      "hash_basis": "exact bytes",
+      "format": "PNG"
+    }
+  ]
+}

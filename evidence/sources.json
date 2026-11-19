@@ -1,0 +1,26 @@
+{
+  "project": "55 Cancri e — Exoplanet Atmosphere Report",
+  "repository": "https://github.com/Biswajit1999/55cancri-e-exoplanet-report",
+  "files": [
+    {
+      "label": "Data source notes",
+      "path": "data/SOURCE.md",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Spitzer occultation depths",
+      "path": "data/spitzer_occultation_depths.csv",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Summary statistics",
+      "path": "figures/summary_statistics.csv",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "55cnce dayside variability",
+      "path": "figures/55cnce_dayside_variability.png",
+      "role": "Figures"
+    }
+  ]
+}
